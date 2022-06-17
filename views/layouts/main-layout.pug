@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title #{docTitle}
+        link(rel="shortcut icon" href="/img/favicon.png" type="image/x-icon")
+        link(rel="stylesheet" href="/css/bootstrap.min.css")
+        block styles
+    body 
+        header
+            nav.navbar.navbar-expand-md.navbar-dark.bg-dark
+                div.container
+                    a.navbar-brand(href="/") Productos
+                    button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation")
+                        span.navbar-toggler-icon
+                    div.collapse.navbar-collapse#navbarNavAltMarkup
+                        div.navbar-nav.ms-md-auto
+                            a.nav-link(href="/", class=(path === '/' ? 'active' : '')) Todos
+                            a.nav-link(href="/producto/add", class=(path === '/producto/add' ? 'active' : '')) Nuevo
+        main
+            block content
+        script(src="/js/bootstrap.bundle.min.js") 

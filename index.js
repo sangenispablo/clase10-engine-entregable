@@ -6,6 +6,10 @@ if (param === "html") {
   app = require("./app_html");
 }
 
+if (param === "pug") {
+  app = require("./app_pug");
+}
+
 const port = 8080;
 
 const server = app.listen(port, () => {

@@ -7,11 +7,16 @@ const productos = [];
 const router = express.Router();
 
 router.get("/add", (req, res, next) => {
+  console.log(productos);
   res.sendFile(path.join(require.main.path, "views", "agregar-producto.html"));
 });
 
-router.post("/add-product", (req, res, next) => {
-  productos.push({ title: req.body.title });
+router.post("/add", (req, res, next) => {
+  productos.push({
+    title: req.body.title,
+    price: req.body.price,
+    thumbnail: req.body.thumbnail,
+  });
   res.redirect("/");
 });
 

@@ -1,4 +1,10 @@
-const app = require("./app");
+const param = process.argv[2];
+
+let app;
+
+if (param === "html") {
+  app = require("./app_html");
+}
 
 const port = 8080;
 

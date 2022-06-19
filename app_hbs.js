@@ -1,12 +1,18 @@
 const express = require("express");
+const { engine } = require("express-handlebars");
 
-const homeRoutes = require("./routes/home_pug");
-const productoRoutes = require("./routes/producto_pug");
+const homeRoutes = require("./routes/home_hbs");
+const productoRoutes = require("./routes/producto_hbs");
 
 const app = express();
 
-// seteamos pug
-app.set("view engine", "pug");
+// seteamos express-handlebars usamos defaultLayout en false para evitar la
+// configuración por defecto
+app.engine(
+  "hbs",
+  engine({ defaultLayout: false, layoutsDir: "views/layouts/" })
+);
+app.set("view engine", "hbs");
 app.set("views", "views");
 
 // middleware varios

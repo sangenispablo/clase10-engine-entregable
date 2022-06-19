@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js pug",
-    "dev": "npx nodemon index.js pug"
+    "start": "node index.js hbs",
+    "dev": "npx nodemon index.js hbs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
     "pug": "^3.0.2"
   },
   "devDependencies": {

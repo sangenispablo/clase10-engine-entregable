@@ -8,10 +8,8 @@ const router = express.Router();
 router.get("/add", (req, res, next) => {
   res.render("agregar-producto", {
     docTitle: "Nuevo Producto",
-    activeNuevo: true,
+    path: "/producto/add",
   });
-  // Si quiero que no le de bola al layout debo pasarle al render
-  // layout: false
 });
 
 router.post("/add", (req, res, next) => {

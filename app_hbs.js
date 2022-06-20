@@ -10,8 +10,14 @@ const app = express();
 // configuración por defecto
 app.engine(
   "hbs",
-  engine({ defaultLayout: false, layoutsDir: "views/layouts/" })
+  engine({
+    defaultLayout: "main-layout",
+    layoutsDir: "views/layouts/",
+    extname: "hbs",
+  })
 );
+// Si quiero que no le debe bola al main-layout.hsb le puedo pasar al objeto
+// en el render layout: false
 app.set("view engine", "hbs");
 app.set("views", "views");
 

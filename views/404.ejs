@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ docTitle }}</title>
-    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon" />
-    <link href="/css/bootstrap.min.css" rel="stylesheet" />
-  </head>
+  
+  <%- include('includes/head.ejs') %>
+
   <body>
-    
+
     <main>
       <div class="d-flex align-items-center justify-content-center vh-100">
         <div class="text-center">
@@ -22,6 +18,7 @@
       </div>
     </main>
 
-    <script src="/js/bootstrap.bundle.min.js"></script>
+    <%- include('includes/end.ejs') %>
   </body>
+  
 </html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{docTitle}}</title>
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    {{#if masCSS}}
+        {{!-- Si se necesita mas css lo ponemos acá  --}}
+        {{!-- Punto negativo para hbs  --}}
+    {{/if}}
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="/">Productos</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-md-auto">
+              <a class="nav-link {{#if activeTodos}}active{{/if}}" href="/">Todos</a>
+              <a class="nav-link {{#if activeNuevo}}active{{/if}}" href="/producto/add">Nuevo</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main content -->
+    {{{ body }}}
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    {{#if masJS}}
+        {{!-- Si se necesita mas js lo ponemos acá  --}}
+    {{/if}}
+  </body>
+</html>

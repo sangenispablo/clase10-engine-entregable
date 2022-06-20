@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('includes/head.ejs') %>
+  <body>
+    <header>
+      <%- include('includes/navigation.ejs') %>
+    </header>
+
+    <!-- Main content -->
+    <main>
+      <section class="py-2 text-center container">
+        <div class="row py-lg-1">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <% if (prods.length > 0) { %>
+              <h1 class="fw-light">Listado de Productos</h1>
+            <% } else { %>
+              <h1 class="fw-light">Listado de Productos Vacio</h1>
+            <% } %>
+          </div>
+        </div>
+      </section>
+
+      <% if (prods.length > 0) { %>
+        <div class="py-2 bg-light">
+          <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+              <% for (let product of prods) { %>
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <img
+                      src=<%= product.thumbnail %>
+                      class="card-img-top"
+                      alt="img1"
+                      width="100%"
+                      height="100%"
+                    />
+                    <div class="card-body">
+                      <p class="card-text"><%= product.title %></p>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="btn-group">
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            Ver
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            Editar
+                          </button>
+                        </div>
+                        <small class="text-muted">$ <%= product.price %></small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      <% } %>
+    </main>
+    <%- include('includes/end.ejs') %>
+  </body>
+</html>

@@ -14,6 +14,10 @@ if (param === "hbs") {
   app = require("./app_hbs");
 }
 
+if (param === "ejs") {
+  app = require("./app_ejs");
+}
+
 const port = 8080;
 
 const server = app.listen(port, () => {
